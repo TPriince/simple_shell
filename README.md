@@ -1,2 +1,2 @@
-# Our simple shell project
+# Our simple shell command line
 By Pelzmagic and Tobiloba Odukoya
