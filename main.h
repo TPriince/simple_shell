@@ -1,6 +1,24 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <unistd.h>
+#include <sys/wait.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fctntl.h>
+#include <errno.h>
+#include <signal.h>
+#include <limits.h>
+
+/* split_string */
+_Bool splitString(config *build);
+unsigned int countWords(char *s);
+_Bool isSpace(char c);
+
+
 /* shell */
 void shell(config *build);
 
