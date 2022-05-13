@@ -13,6 +13,11 @@
 #include <signal.h>
 #include <limits.h>
 
+
+/* check_path */
+_Bool checkPath(config *);
+_Bool checkEdgeCases(config *build);
+
 /* split_string */
 _Bool splitString(config *build);
 unsigned int countWords(char *s);
