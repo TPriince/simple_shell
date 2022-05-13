@@ -13,6 +13,10 @@
 #include <signal.h>
 #include <limits.h>
 
+extern char **environ;
+
+/* _getenv */
+char *_getenv(char *input, char **environ);
 
 /* check_path */
 _Bool checkPath(config *);
