@@ -92,11 +92,16 @@ void forkAndExecute(config *build);
 void stripComments(char *str);
 void convertLLtoArr(config *build);
 
+/* shell_helpers */
+void insertNullByte(char *str, unsigned int index);
+void displayPrompt(void);
+void displayNewLine(void);
+void sigintHandler(int sigint);
+
 /* split_string */
 _Bool splitString(config *build);
 unsigned int countWords(char *s);
 _Bool isSpace(char c);
-
 
 /* shell */
 void shell(config *build);
