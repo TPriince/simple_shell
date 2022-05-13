@@ -13,6 +13,14 @@
 #include <signal.h>
 #include <limits.h>
 
+/* ERRORS */
+#define BUFSIZE 256
+#define ENOSTRING 1106
+#define EILLEGAL 227
+#define EWSIZE 410
+#define ENOBUILTIN 415
+#define EBADCD 726
+
 extern char **environ;
 
 /**
@@ -54,12 +62,35 @@ typedef struct configurations
 /* main */
 config *configInit(config *build);
 
+/* built_ins */
+_Bool findBuiltIns(config *build);
+int exitfunc(config *build);
+int historyFunc(config *build);
+int aliasFunc(config *build);
+
+/* built_in_helpers */
+int countArgs(char **args);
+int _atoi(char *s);
+
+/* error_handler */
+void errorHandler(config *build);
+unsigned int countDigits(int num);
+char *itoa(unsigned int num);
+char *getErrorMessage();
+
 /* _getenv */
 char *_getenv(char *input, char **environ);
 
 /* check_path */
 _Bool checkPath(config *);
 _Bool checkEdgeCases(config *build);
+
+/* shell */
+void shell(config *build);
+void checkAndGetLine(config *build);
+void forkAndExecute(config *build);
+void stripComments(char *str);
+void convertLLtoArr(config *build);
 
 /* split_string */
 _Bool splitString(config *build);
