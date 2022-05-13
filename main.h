@@ -59,6 +59,12 @@ typedef struct configurations
 	int errorStatus;
 } config;
 
+typedef struct builtInCommands
+{
+	char *command;
+	int (*func)(config *build);
+} type_b;
+
 /* main */
 config *configInit(config *build);
 
@@ -88,6 +94,12 @@ void errorHandler(config *build);
 unsigned int countDigits(int num);
 char *itoa(unsigned int num);
 char *getErrorMessage();
+
+/* env */
+int envFunc(config *build);
+int setenvFunc(config *build);
+int unsetenvFunc(config *build);
+int _isalpha(int c);
 
 /* _getenv */
 char *_getenv(char *input, char **environ);
