@@ -85,6 +85,10 @@ char *_getenv(char *input, char **environ);
 _Bool checkPath(config *);
 _Bool checkEdgeCases(config *build);
 
+/* realloc */
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+char *_memcpy(char *dest, char *src, unsigned int n);
+
 /* shell */
 void shell(config *build);
 void checkAndGetLine(config *build);
@@ -131,5 +135,8 @@ linked_l *generateLinkedList(char **array);
 linked_l *addNodeAtIndex(linked_l **head, int index, char *str);
 char *getNodeAtindex(linked_l *head, unsigned int index);
 
+/* welcome */
+void welcome_screen_1(void);
+void welcome_screen_2(void);
 
 #endif
