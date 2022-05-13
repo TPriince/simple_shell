@@ -72,6 +72,17 @@ int aliasFunc(config *build);
 int countArgs(char **args);
 int _atoi(char *s);
 
+/* cd1 */
+int cdFunc(config *);
+_Bool cdToHome(config *build);
+_Bool cdToPrevious(config *build);
+_Bool cdToCustom(config *build);
+_Bool updateEnviron(config *build);
+
+/* cd2 */
+int updateOld(config *build);
+_Bool updateCur(config *build, int index);
+
 /* error_handler */
 void errorHandler(config *build);
 unsigned int countDigits(int num);
