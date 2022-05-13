@@ -110,6 +110,20 @@ void freeList(linked_l *head);
 /* _getenv */
 char *_getenv(char *input, char **environ);
 
+/* help1 */
+int helpFunc(config *build);
+int displayHelpMenu(void);
+int helpExit(config *build);
+int helpEnv(config *build);
+int helpHistory(config *build);
+
+/* help2 */
+int helpAlias(config *build);
+int helpCd(config *biuld);
+int helpSetenv(config *build);
+int helpUnsetenv(config *build);
+int helpHelp(config *build);
+
 /* check_path */
 _Bool checkPath(config *);
 _Bool checkEdgeCases(config *build);
