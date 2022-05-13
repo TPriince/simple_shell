@@ -101,6 +101,12 @@ int setenvFunc(config *build);
 int unsetenvFunc(config *build);
 int _isalpha(int c);
 
+/* free */
+void freeMembers(config *build);
+void freeArgsAndBuffer(config *build);
+void freeArgs(char **args);
+void freeList(linked_l *head);
+
 /* _getenv */
 char *_getenv(char *input, char **environ);
 
