@@ -5,7 +5,7 @@
 int is_name_env(char *token, char *env_name);
 void advance_env(char **env_token);
 /**
- * print_env - Stores and prints the 'env'
+ * print_env - Stores and prints the `env`
  *
  * @envp: Double pointer to tokens
  *
@@ -58,12 +58,11 @@ int print_env(char *envp[])
 /**
  * _getenv - gets an environmental variable by name
  *
- * @env_name - name of environmental variable to find, e.g: PATH, HOME, USER
+ * @env_name: name of environmental variable to find, e.g: PATH, HOME, USER
  * @environ: array of pointers to environmental variables
  *
  * Return: pointer to char after equal sign in env, e.g: PATH= ->/bin:/usr/bin
  */
-
 char *_getenv(char *env_name, char **environ)
 {
 	char *ret = NULL;
@@ -80,8 +79,8 @@ char *_getenv(char *env_name, char **environ)
 		}
 		i++;
 	}
-	/*advance pointer to after ENV=env_var */
-	/*                             ^       */
+	/* advance pointer to after ENV=env_var */
+	/*                              ^       */
 	if (ret)
 		advance_env(&ret);
 
@@ -111,15 +110,14 @@ int is_name_env(char *token, char *env_name)
 }
 
 /**
- * advance_env - takes a pointer to environmental variables and advances
- * to the character beyonf te equal sign.
+ * advance_env - takes a pointer to environmental variable and advances
+ * to the character beyond the equal sign.
  *
- * path_env - pointer to the pointer to path token
+ * @path_env: pointer to the pointer to path token
  *
- * Return: always void
+ * Return: always void.
  */
-
-void advance_env(char **path_env);
+void advance_env(char **path_env)
 {
 	char *token = NULL;
 
@@ -128,6 +126,6 @@ void advance_env(char **path_env);
 	token = *path_env;
 	while (*token != '=')
 		token++;
-	token++; /*set to character beyond equal sign */
+	token++; /* set to character beyond equal sign */
 	*path_env = token;
 }
