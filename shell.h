@@ -11,6 +11,35 @@
 #include <unistd.h>
 #include <errno.h>
 
+/**
+ * struct list_s - A new struct type defining a linked list.
+ * @dir: A directory path.
+ * @next: A pointer to another struct list_s.
+ */
+typedef struct list_s
+{
+	char *dir;
+	struct list_s *next;
+} list_t;
+
+
+/**
+ * struct alias_s - A new struct defining aliases.
+ * @name: The name of the alias.
+ * @value: The value of the alias.
+ * @next: A pointer to another struct alias_s.
+ */
+typedef struct alias_s
+{
+	char *name;
+	char *value;
+	struct alias_s *next;
+} alias_t;
+
+
+/* Global aliases linked list */
+alias_t *aliases;
+
 
 /* String functions */
 int _strlen(const char *s);
@@ -36,5 +65,11 @@ int shellby_help(char **args, char __attribute__((__unused__)) **front);
 char **_copyenv(void);
 void free_env(void);
 char **_getenv(const char *var);
+
+/* Linkedlist Helpers */
+alias_t *add_alias_end(alias_t **head, char *name, char *value);
+void free_alias_list(alias_t *head);
+list_t *add_node_end(list_t **head, char *dir);
+void free_list(list_t *head);
 
 #endif
